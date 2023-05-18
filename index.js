@@ -26,6 +26,7 @@ async function updateBody() {
     const response = await Axios.get(`https://api.seniverse.com/v4?fields=weather_daily&key=${KEY}&locations${LOCATION}`);
     if (response.status !== 200) {
       throw Error(`
+      <!DOCTYPE html>
       <h1>天气服务出错啦</h1>
       <p>错误码：${response.status}</p>
       <p>错误信息：${response.statusText}</p>
@@ -87,7 +88,7 @@ async function updateBody() {
     //   newBody += `<li>${name}：${value}</li>`;
     // }
     // newBody += "</ul>";
-
+    newBody += `<!DOCTYPE html>`
     newBody += "<h3>天气预报（位置：镇海中学）</h3>";
     newBody += `数据更新时间：${weatherDaily.time_updated}`
     newBody += "<ul>";
@@ -103,7 +104,7 @@ async function updateBody() {
     }
     newBody += "</ul>";
     newBody += "数据来源： 和风天气（www.seniverse.com）<br/>"
-    newBody+="抱歉—— _Kerman真的懒得写好看的UI了，将就着看吧~"
+    newBody += "抱歉—— _Kerman真的懒得写好看的UI了，将就着看吧~"
     catchedBody = newBody;
   } catch (e) {
     catchedBody = "ERROR: " + e;
