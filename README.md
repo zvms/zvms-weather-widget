@@ -1,1 +1,2 @@
-https://qweather.com
+
+API powered by https://qweather.com
